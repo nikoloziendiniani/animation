@@ -1,0 +1,114 @@
+:root {
+  --pink: rgb(167, 58, 58);
+}
+.container {
+  display: flex;
+  justify-content: center;
+}
+.container .dishes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70vw;
+}
+.title {
+  font-size: 28px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 800;
+}
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  width: 1200px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 13px;
+  width: calc((1200px / 3) - 30px);
+  background-color: gray;
+  border-radius: 5px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.178);
+}
+.card img {
+  width: calc((1200px / 3) - 30px - 20px - 20px);
+  height: calc((1200px / 3) - 70px - 30px);
+  border-radius: 4px;
+}
+.card .header {
+  font-size: 27px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: var(--pink);
+  text-transform: uppercase;
+}
+.card .text {
+  text-transform: capitalize;
+}
+.card .sell {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px;
+  color: var(--pink);
+  font-weight: 700;
+}
+.card .sell .btn {
+  font-size: 17px;
+  padding: 8px 30px;
+  border-radius: 24px;
+  background-color: var(--pink);
+  font-weight: 700;
+  transition: 0.1s;
+}
+.card .sell .btn:hover {
+  background-color: black;
+}
+/* animatsiebi for card */
+
+/* for left cards */
+@keyframes left {
+  from {
+    transform: translate(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+.card:nth-child(3n-2){
+    animation: left 2s 1;
+}
+/* for midle card */
+@keyframes midle{
+    from{
+        transform: scale(0);
+        opacity: 0;
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.card:nth-child(3n-1){
+    animation: midle 2s 1;
+}
+/* for right card */
+@keyframes right {
+    from {
+        transform: translate(150%);
+        opacity: 0;
+      }
+      to {
+        transform: translate(0);
+        opacity: 1;
+      }
+}
+.card:nth-child(3n){
+    animation: right 2s 1;
+}
+/* end of animation (for card) */
